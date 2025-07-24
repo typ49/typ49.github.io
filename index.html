@@ -6,52 +6,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/main/Favicon.ico" type="image/x-icon">
+
+    <!-- stylesheet -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme_light.css" id="theme">
+
+    <!-- script -->
     <script src="js/slide.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/darkmod.js"></script>
 
 </head>
 
-<body class="w3-black">
+<body class="w3-theme">
 
     <!-- Navbar (sit on top) -->
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
-            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+            <a class="w3-bar-item w3-button w3-hover-theme w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
-            <a href="#home" class="w3-bar-item w3-button">HOME</a>
-            <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+            <a href="#home" class="w3-bar-item w3-button"><img src="assets/LOGO-black.png" alt="JG"
+                    class="w3-image w3-round-xlarge" width="20px" height="auto"></a>
+            <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> A PROPOS</a>
             <a href="#galleries" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> GALLERIES</a>
-            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+            <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACTE</a>
             </a>
         </div>
 
         <!-- Navbar on small screens -->
-        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+        <div id="navDemo" class="w3-bar-block w3-theme-l3 w3-hide w3-hide-large w3-hide-medium">
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">A PROPOS</a>
             <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERIES</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTE</a>
         </div>
     </div>
 
     <!-- Page Content -->
     <div class="w3-padding-large" id="main">
         <!-- Header/Home -->
-        <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <header class="w3-container w3-padding-32 w3-center w3-theme" id="home">
             <h1 class="w3-jumbo"><span>Julien </span> Gauthier</h1>
             <p>IT Ingeneer and Web Designer.</p>
-            <img src="assets/LOGO-black.png" alt="boy" class="w3-image w3-round-xlarge" width="600px" height="auto">
+            <img id="logo" src="assets/LOGO-light.png" alt="JG" class="w3-image w3-round-xlarge" width="600px"
+                height="auto">
         </header>
 
         <!-- About Section -->
-        <div class="w3-content w3-justify w3-text-white w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey">Présentations</h2>
-            <hr style="width:200px" class="w3-opacity">
+        <div class="w3-content w3-justify w3-padding-64" id="about">
+            <h2>Présentations</h2>
+            <hr style="width:300px" class="w3-opacity">
             <p>
                 Après deux ans de <b>maths-physique-chimie</b> et un <strong>master en ingénierie système et
                     logiciel</strong>, je tente l'aventure <b>du web design et de la création d'application et de
@@ -66,27 +74,30 @@
                 programmation.
 
             </p>
-            <h3 class="w3-padding-16 w3-text-light-grey">Mes Compétences</h3>
+        </div>
+        <div class="w3-padding-64 w3-content" id="contact">
+            <h2>Mes Compétences</h2>
+            <hr style="width:300px" class="w3-opacity">
             <div class="w3-row w3-row-padding w3-stretch">
                 <div class="w3-col l6 m6">
                     <div class="w3-content w3-display-container" style="max-width:800px">
                         <div class="mySlides" style="height: 300px">
                             <h4 class="w3-center">Web 1/2</h4>
                             <p class="w3-wide">w3.css</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:80%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
                                         class="w3-padding">80%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">JavaScript</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:70%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">Dart</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:60%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:60%"><span
                                         class="w3-padding">60%</span>
                                 </div>
                             </div>
@@ -94,14 +105,14 @@
                         <div class="mySlides" style="height: 300px">
                             <h4 class="w3-center">Web 2/2</h4>
                             <p class="w3-wide">Flutter</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:80%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">PHP</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:80%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
@@ -109,21 +120,21 @@
                         <div class="mySlides" style="height: 300px">
                             <h4 class="w3-center">Programmation Objet</h4>
                             <p class="w3-wide">Python</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:80%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
                                         class="w3-padding">80%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">Java</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:80%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
                                         class="w3-padding">80%</span>
                                 </div>
                             </div>
 
                             <p class="w3-wide">C++</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:70%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
@@ -132,14 +143,14 @@
                         <div class="mySlides" style="height: 300px">
                             <h4 class="w3-center">Programmation Fonctionnelle</h4>
                             <p class="w3-wide">Scheme</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:70%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">Prolog</p>
-                            <div class="w3-white">
-                                <div class="w3-dark-grey" style="height:28px;width:70%"><span
+                            <div class="w3-theme-l3">
+                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
@@ -147,17 +158,13 @@
 
                         <div class="w3-center">
                             <div class="w3-section">
-                                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
-                                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                                <div class="w3-left w3-hover-opcaity" onclick="plusDivs(-1)">&#10094;</div>
+                                <div class="w3-right w3-hover-opacity" onclick="plusDivs(1)">&#10095;</div>
                             </div>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(1)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(2)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(3)"></span>
-                            <span class="w3-badge demo w3-border w3-transparent w3-hover-white"
-                                onclick="currentDiv(4)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent" onclick="currentDiv(1)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent" onclick="currentDiv(2)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent" onclick="currentDiv(3)"></span>
+                            <span class="w3-badge demo w3-border w3-transparent" onclick="currentDiv(4)"></span>
                         </div>
                     </div>
                 </div>
@@ -166,16 +173,16 @@
                     <h4>art</h4>
 
                     <div class="w3-padding-large" style="margin: 0% 10% 0% 10%;">
-                        <p class="w3-button w3-dark-grey w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
+                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
                             <span class="left-to-center">Musique</span>
                         </p>
-                        <p class="w3-button w3-dark-grey w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
+                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
                             <span class="right-to-center">Game Design</span>
                         </p>
-                        <p class="w3-button w3-dark-grey w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
+                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
                             <span class="left-to-center">Web Design</span>
                         </p>
-                        <p class="w3-button w3-dark-grey w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
+                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
                             <span class="right-to-center">Parolier</span>
                         </p>
                     </div>
@@ -185,107 +192,126 @@
             <br>
             <a href="https://drive.google.com/file/d/16RPf3xKiJuiS4bK8haRNG2eDkHYkwhaE/view?usp=drive_link"
                 target="_blank">
-                <button class="w3-button w3-light-grey w3-padding-large w3-section w3-center w3-hide-small">
+                <button class="w3-button w3-theme-l3 w3-padding-large w3-section w3-center w3-hide-small">
                     Download Resume <i class="fa fa-external-link"></i>
                 </button>
             </a>
             <a href="https://drive.google.com/file/d/16RPf3xKiJuiS4bK8haRNG2eDkHYkwhaE/view?usp=drive_link"
                 target="_blank">
-                <button class="w3-button w3-light-grey w3-padding-large w3-section w3-center w3-hide-medium w3-hide-large w3-mobile">
+                <button
+                    class="w3-button w3-theme-l3 w3-padding-large w3-section w3-center w3-hide-medium w3-hide-large w3-mobile">
                     Download Resume <i class="fa fa-external-link"></i>
                 </button>
             </a>
         </div>
 
 
-    </div>
 
-    <h3 class="w3-center">Mes Passions</h3>
-    <div class="w3-row w3-center w3-padding-large w3-section w3-light-grey w3-stretch">
 
-        <div class="w3-third w3-section">
-            <span class="w3-xlarge">jeu-vidéos</span>
-        </div>
-        <div class="w3-third w3-section">
-            <span class="w3-xlarge">Musique</span>
-        </div>
-        <div class="w3-third w3-section">
-            <span class="w3-xlarge">cinéma</span>
-        </div>
 
-    </div>
+        <div class="w3-padding-64 w3-content" id="contact">
+            <h2>Mes Passions</h2>
+            <hr style="width:300px" class="w3-opacity">
+            <div class="w3-row w3-center w3-padding-large w3-section w3-theme-l3">
 
-    <!-- Portfolio Section -->
-    <div class="w3-padding-64 w3-content" id="galleries">
-        <h2 class="w3-text-light-grey">Mes Projets</h2>
-        <hr style="width:200px" class="w3-opacity">
+                <div class="w3-third w3-section">
+                    <span class="w3-xlarge">jeu-vidéos</span>
+                </div>
+                <div class="w3-third w3-section">
+                    <span class="w3-xlarge">Musique</span>
+                </div>
+                <div class="w3-third w3-section">
+                    <span class="w3-xlarge">cinéma</span>
+                </div>
 
-        <!-- Grid for photos -->
-        <div class="w3-row-padding" style="margin:0 -16px">
-            <div class="w3-col m6">
-                <img src="assets/project_photo/web_chorale.png" style="width:100%" onclick="onClick(this)"
-                    class="w3-hover-opacity" id="Site web de la Chorale Universitaire de Besançon"
-                    alt="https://www.choraleu-besancon.fr">
-            </div>
-            <div class="w3-col m6">
-                <img src="assets/project_photo/swiftness.png" style="width:100%" onclick="onClick(this)"
-                    class="w3-hover-opacity" id="Swiftness (plateform game)"
-                    alt="https://github.com/typ49/Swiftness.git">
-            </div>
-            <!-- End photo grid -->
-        </div>
-
-        <!-- Modal for full size images on click-->
-        <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-            <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
-                    class="fa fa-remove"></i></span>
-            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-                <img id="img01" class="w3-image">
-                <p id="caption" class="w3-opacity w3-large"></p>
             </div>
         </div>
-        <!-- End Portfolio Section -->
-    </div>
 
-    <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-        <h2 class="w3-text-light-grey">Me Contacter</h2>
-        <hr style="width:200px" class="w3-opacity">
+        <!-- Portfolio Section -->
+        <div class="w3-padding-64 w3-content" id="galleries">
+            <h2>Mes Projets</h2>
+            <hr style="width:300px" class="w3-opacity">
 
-        <div class="w3-section">
-            <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Besançon, FR</p>
-            <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +33 6 42 38 96 02
-            </p>
-            <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email:
-                <a class="w3-hover-opacity" href="mailto:juliengauthier410@gmail.com">juliengauthier410@gmail.com</a>
-            </p>
-        </div><br>
-        <!-- <p>Let's get in touch. Send me a message:</p> -->
+            <!-- Grid for photos -->
+            <div class="w3-row w3-row-padding">
+                <div class="w3-col l4 m4">
+                    <img src="assets/project_photo/web_chorale.png" style="width:100%" onclick="onClick(this)"
+                        class="w3-hover-opacity" id="Site web de la Chorale Universitaire de Besançon"
+                        alt="https://www.choraleu-besancon.fr">
+                </div>
+                <div class="w3-col l4 m4">
+                    <img src="assets/project_photo/besacraft.png" style="width:100%" onclick="onClick(this)"
+                        class="w3-hover-opacity" id="Besacraft 1722 (Mod Minecraft)"
+                        alt="https://besacraft.fr/">
+                </div>
+                <div class="w3-col l4 m4">
+                    <img src="assets/project_photo/swiftness.png" style="width:100%" onclick="onClick(this)"
+                        class="w3-hover-opacity" id="Swiftness (jeu de plateforme)"
+                        alt="https://github.com/typ49/Swiftness.git">
+                </div>
+                <!-- End photo grid -->
+            </div>
 
-        <!-- <form action="/action_page.php" target="_blank">
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-            <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-            <p>
-                <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-                    <i class="fa fa-paper-plane"></i> SEND MESSAGE
-                </button>
-            </p>
-        </form> -->
-        <!-- End Contact Section -->
+            <!-- Modal for full size images on click-->
+            <div id="modal01" class="w3-modal w3-theme" onclick="this.style.display='none'">
+                <span class="w3-button w3-large w3-theme w3-display-topright" title="Close Modal Image"><i
+                        class="fa fa-remove"></i></span>
+                <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                    <img id="img01" class="w3-image">
+                    <p id="caption" class="w3-opacity w3-large"></p>
+                </div>
+            </div>
+            <!-- End Portfolio Section -->
+        </div>
+
+        <!-- Contact Section -->
+        <div class="w3-padding-64 w3-content" id="contact">
+            <h2>Me Contacter</h2>
+            <hr style="width:300px" class="w3-opacity">
+
+            <div class="w3-section">
+                <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Besançon, FR</p>
+                <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +33 6 42 38 96 02
+                </p>
+                <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email:
+                    <a class="w3-hover-opacity"
+                        href="mailto:juliengauthier410@gmail.com">juliengauthier410@gmail.com</a>
+                </p>
+            </div><br>
+
+            <!-- <p>Restons en contacte. Envoyez-moi un message:</p>
+
+            <form action="/action_page.php" target="_blank">
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Nom" required name="Name"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Sujet" required name="Subject"></p>
+                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
+                <p>
+                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+                        <i class="fa fa-paper-plane"></i> Envoie
+                    </button>
+                </p>
+            </form> -->
+            <!-- End Contact Section -->
+        </div>
     </div>
 
     <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-        <a href="https://www.instagram.com/typ490/" target="_blank"><i class="fa fa-instagram w3-hover-opacity" aria-hidden="true"></i></a>
-        <a href="https://www.linkedin.com/in/julien-gauthier-typ49" target="_blank"><i class="fa fa-linkedin w3-hover-opacity" aria-hidden="true"></i></a>
-        <a href="https://github.com/typ49" target="_blank"><i class="fa fa-github w3-hover-opacity" aria-hidden="true"></i></a>
-        <a href="https://letterboxd.com/typ49/" target="_blank"><img class="w3-image w3-hover-opacity" src="assets/main/letterboxd-decal-dots-pos-rgb-500px.png" style="width: 20.58px; height: 24px;"></a>
-        <a href="https://www.serializd.com/user/typ49/profile" target="_blank"><img class="w3-image w3-hover-opacity" src="assets/main/serialized.png" style="width: 20.58px; height: 24px;"></a>
-        <a href="https://backloggd.com/u/typ49/" target="_blank"><img class="w3-image w3-hover-opacity" src="assets/main/backloggd.png" style="width: 20.58px; height: 24px;"></a>
+    <footer class="w3-content w3-center w3-padding-64 w3-xlarge">
+        <a href="https://www.instagram.com/typ490/" target="_blank"><i class="fa fa-instagram w3-hover-opacity"
+                aria-hidden="true"></i></a>
+        <a href="https://www.linkedin.com/in/julien-gauthier-typ49" target="_blank"><i
+                class="fa fa-linkedin w3-hover-opacity" aria-hidden="true"></i></a>
+        <a href="https://github.com/typ49" target="_blank"><i class="fa fa-github w3-hover-opacity"
+                aria-hidden="true"></i></a><br>
+        <a href="https://letterboxd.com/typ49/" target="_blank"><img class="w3-image w3-hover-opacity"
+                src="assets/main/letterboxd-decal-dots-pos-rgb-500px.png" style="width: 20.58px; height: 24px;"></a>
+        <a href="https://www.serializd.com/user/typ49/profile" target="_blank"><img class="w3-image w3-hover-opacity"
+                src="assets/main/serialized.png" style="width: 20.58px; height: 24px;"></a>
+        <a href="https://backloggd.com/u/typ49/" target="_blank"><img class="w3-image w3-hover-opacity"
+                src="assets/main/backloggd.png" style="width: 20.58px; height: 24px;"></a>
         <p class="w3-medium">Site web réalisé avec <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
-                class="w3-hover-text-green">w3.css</a></p>
+                class="w3-hover-text-green">w3.css</a> par<strong>Julien Gauthier</strong></p>
         <!-- End footer -->
     </footer>
 

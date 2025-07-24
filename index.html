@@ -27,7 +27,7 @@
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-theme w3-hide-medium w3-hide-large w3-right"
-                href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                href="javascript:void(0);" onclick="toggleNavbarFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
             <a href="#home" class="w3-bar-item w3-button"><img src="assets/LOGO-black.png" alt="JG"
@@ -40,9 +40,9 @@
 
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-theme-l3 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">A PROPOS</a>
-            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction()">GALLERIES</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACTE</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">A PROPOS</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">GALLERIES</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">CONTACTE</a>
         </div>
     </div>
 
@@ -168,23 +168,87 @@
                         </div>
                     </div>
                 </div>
-                <!-- TODO : faire quatre bouton en grille -->
+
                 <div class="w3-col l6 m6 w3-center" style="height: 300px;">
                     <h4>art</h4>
 
                     <div class="w3-padding-large" style="margin: 0% 10% 0% 10%;">
-                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
+                        <button onclick="document.getElementById('modal-left-1').style.display='block'"
+                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align w3-margin-bottom w3-hover-opacity">
                             <span class="left-to-center">Musique</span>
-                        </p>
-                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
+                        </button>
+                        <div id="modal-left-1" class="w3-modal"
+                            onclick="document.getElementById('modal-left-1').style.display='none'">
+                            <div class="w3-modal-content w3-animate-left">
+                                <header class="w3-container w3-theme">
+                                    <h2>Musique</h2>
+                                </header>
+                                <div class="w3-container w3-text-theme">
+                                    <p>Musiciens depuis mon enfance, j'aime jouer et écouter toute sorte de musique, du
+                                        rock au jazz en passant par l'électro et la pop !</p>
+                                </div>
+                                <footer class="w3-container w3-theme">
+                                    <br>
+                                </footer>
+                            </div>
+                        </div>
+                        <button onclick="document.getElementById('modal-right-1').style.display='block'"
+                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align w3-margin-bottom w3-hover-opacity">
                             <span class="right-to-center">Game Design</span>
-                        </p>
-                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align">
+                        </button>
+                        <div id="modal-right-1" class="w3-modal"
+                            onclick="document.getElementById('modal-right-1').style.display='none'">
+                            <div class="w3-modal-content w3-animate-right">
+                                <header class="w3-container w3-theme">
+                                    <h2>Web Design</h2>
+                                </header>
+                                <div class="w3-container w3-text-theme">
+                                    <p>Some text..</p>
+                                    <p>Some text..</p>
+                                </div>
+                                <footer class="w3-container w3-theme">
+                                    <br>
+                                </footer>
+                            </div>
+                        </div>
+                        <button onclick="document.getElementById('modal-left-2').style.display='block'"
+                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align w3-margin-bottom w3-hover-opacity">
                             <span class="left-to-center">Web Design</span>
-                        </p>
-                        <p class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align">
+                        </button>
+                        <div id="modal-left-2" class="w3-modal"
+                            onclick="document.getElementById('modal-left-2').style.display='none'">
+                            <div class="w3-modal-content w3-animate-left">
+                                <header class="w3-container w3-theme">
+                                    <h2>Game Design</h2>
+                                </header>
+                                <div class="w3-container w3-text-theme">
+                                    <p>Some text..</p>
+                                    <p>Some text..</p>
+                                </div>
+                                <footer class="w3-container w3-theme">
+                                    <br>
+                                </footer>
+                            </div>
+                        </div>
+                        <button onclick="document.getElementById('modal-right-2').style.display='block'"
+                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align w3-margin-bottom w3-hover-opacity">
                             <span class="right-to-center">Parolier</span>
-                        </p>
+                        </button>
+                        <div id="modal-right-2" class="w3-modal"
+                            onclick="document.getElementById('modal-right-2').style.display='none'">
+                            <div class="w3-modal-content w3-animate-right">
+                                <header class="w3-container w3-theme">
+                                    <h2>Parolier</h2>
+                                </header>
+                                <div class="w3-container w3-text-theme">
+                                    <p>Some text..</p>
+                                    <p>Some text..</p>
+                                </div>
+                                <footer class="w3-container w3-theme">
+                                    <br>
+                                </footer>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -212,16 +276,30 @@
         <div class="w3-padding-64 w3-content" id="contact">
             <h2>Mes Passions</h2>
             <hr style="width:300px" class="w3-opacity">
-            <div class="w3-row w3-center w3-padding-large w3-section w3-theme-l3">
-
-                <div class="w3-third w3-section">
-                    <span class="w3-xlarge">jeu-vidéos</span>
+            <div class="w3-row w3-row-padding w3-center w3-padding-large w3-section w3-theme-l3">
+                <div class="w3-col l4 m4">
+                    <button onclick="accordionFunction('p1')" class="w3-button w3-section w3-hover-opacity">
+                        <span class="w3-xlarge">Jeu-vidéos <i class="fa fa-caret-down"></i></span>
+                    </button>
+                    <div id="p1" class="w3-hide w3-theme w3-animate-left">
+                        <p>Jeu-vidéos</p>
+                    </div>
                 </div>
-                <div class="w3-third w3-section">
-                    <span class="w3-xlarge">Musique</span>
+                <div class="w3-col l4 m4">
+                    <button onclick="accordionFunction('p2')" class="w3-button w3-section w3-hover-opacity">
+                        <span class="w3-xlarge">Musique <i class="fa fa-caret-down"></i></span>
+                    </button>
+                    <div id="p2" class="w3-hide w3-theme w3-animate-bottom">
+                        <p>Musique</p>
+                    </div>
                 </div>
-                <div class="w3-third w3-section">
-                    <span class="w3-xlarge">cinéma</span>
+                <div class="w3-col l4 m4">
+                    <button onclick="accordionFunction('p3')" class="w3-button w3-section w3-hover-opacity">
+                        <span class="w3-xlarge">Cinéma <i class="fa fa-caret-down"></i></span>
+                    </button>
+                    <div id="p3" class="w3-hide w3-theme w3-animate-right">
+                        <p>Cinéma</p>
+                    </div>
                 </div>
 
             </div>
@@ -241,8 +319,7 @@
                 </div>
                 <div class="w3-col l4 m4">
                     <img src="assets/project_photo/besacraft.png" style="width:100%" onclick="onClick(this)"
-                        class="w3-hover-opacity" id="Besacraft 1722 (Mod Minecraft)"
-                        alt="https://besacraft.fr/">
+                        class="w3-hover-opacity" id="Besacraft 1722 (Mod Minecraft)" alt="https://besacraft.fr/">
                 </div>
                 <div class="w3-col l4 m4">
                     <img src="assets/project_photo/swiftness.png" style="width:100%" onclick="onClick(this)"

@@ -5,28 +5,29 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato", sans-serif
+  font-family: "Lato", sans-serif
 }
 
 .w3-row-padding img {
-    margin-bottom: 12px
+  margin-bottom: 12px
 }
 
 /* Set the width of the sidebar to 120px */
 .w3-sidebar {
-    width: 120px;
-    background: #222;
+  width: 120px;
+  background: #222;
 }
 
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {
-    #main {
-        margin-left: 0
-    }
+  #main {
+    margin-left: 0
+  }
 }
 
 /* Styles de base pour les spans */
-.left-to-center, .right-to-center {
+.left-to-center,
+.right-to-center {
   display: inline-block;
   transition: transform 0.5s ease;
   /* pour que le texte soit centré verticalement dans le bouton */
@@ -36,12 +37,14 @@ h6 {
 
 /* Le texte commence aligné à gauche (padding/gap à gauche) */
 .left-to-center {
-  transform: translateX(0); /* position normale à gauche */
+  transform: translateX(0);
+  /* position normale à gauche */
 }
 
 /* Le texte commence aligné à droite */
 .right-to-center {
-  transform: translateX(0); /* position normale à droite */
+  transform: translateX(0);
+  /* position normale à droite */
 }
 
 /* Au survol du parent (le bouton), on déplace le texte vers le centre */
@@ -56,18 +59,24 @@ h6 {
 }
 
 
-    .mySlides {
-        display: none
-    }
+.mySlides {
+  display: none
+}
 
-    .w3-left,
-    .w3-right,
-    .w3-badge {
-        cursor: pointer
-    }
+.w3-left,
+.w3-right,
+.w3-badge {
+  cursor: pointer
+}
 
-    .w3-badge {
-        height: 13px;
-        width: 13px;
-        padding: 0
-    }
+.w3-badge {
+  height: 13px;
+  width: 13px;
+  padding: 0
+}
+
+#favorits-section .w3-col>div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}

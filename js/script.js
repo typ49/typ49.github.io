@@ -28,10 +28,31 @@ function toggleNavbarFunction() {
 }
 
 function accordionFunction(id) {
-  var x = document.getElementById(id);
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
+    var x = document.getElementById(id);
+    
+    if (x.className.indexOf("w3-show") == -1) {
+        // Ouvrir l'accordéon
+        x.style.maxHeight = "0px";
+        x.className += " w3-show";
+        
+        // Calculer la hauteur réelle du contenu
+        var scrollHeight = x.scrollHeight;
+        x.style.maxHeight = scrollHeight + "px";
+        
+        // Réinitialiser après l'animation
+        setTimeout(() => {
+            x.style.maxHeight = "none";
+        }, 300);
+    } else {
+        // Fermer l'accordéon
+        x.style.maxHeight = x.scrollHeight + "px";
+        
+        setTimeout(() => {
+            x.style.maxHeight = "0px";
+        }, 10);
+        
+        setTimeout(() => {
+            x.className = x.className.replace(" w3-show", "");
+        }, 300);
+    }
 }

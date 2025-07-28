@@ -18,6 +18,9 @@
     <script src="js/slide.js"></script>
     <script src="js/script.js"></script>
     <script src="js/darkmod.js"></script>
+    <script src="node_modules/howler/src/howler.core.js"></script>
+    <script src="js/player.js"></script>
+
 
 </head>
 
@@ -27,7 +30,7 @@
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-theme w3-hide-medium w3-hide-large w3-right"
-                href="javascript:void(0);" onclick="toggleNavbarFunction()" title="Toggle Navigation Menu">
+                href="javascript:void(0);" onclick="toggleFunction('navDemo')" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
             </a>
             <a href="#home" class="w3-bar-item w3-button"><img src="assets/LOGO-black.png" alt="JG"
@@ -43,11 +46,11 @@
 
         <!-- Navbar on small screens -->
         <div id="navDemo" class="w3-bar-block w3-theme-l3 w3-hide w3-hide-large w3-hide-medium">
-            <a href="#about" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">A PROPOS</a>
-            <a href="#skills" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">MES COMPETENCES</a>
-            <a href="#favorits" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">MES PASSIONS</a>
-            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">GALLERIES</a>
-            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleNavbarFunction()">CONTACTE</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction('navDemo')">A PROPOS</a>
+            <a href="#skills" class="w3-bar-item w3-button" onclick="toggleFunction('navDemo')">MES COMPETENCES</a>
+            <a href="#favorits" class="w3-bar-item w3-button" onclick="toggleFunction('navDemo')">MES PASSIONS</a>
+            <a href="#portfolio" class="w3-bar-item w3-button" onclick="toggleFunction('navDemo')">GALLERIES</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction('navDemo')">CONTACTE</a>
         </div>
     </div>
 
@@ -56,7 +59,7 @@
         <!-- Header/Home -->
         <header class="w3-container w3-padding-32 w3-center w3-theme" id="home">
             <h1 class="w3-jumbo"><span>Julien </span> Gauthier</h1>
-            <p>IT Ingeneer and Web Designer.</p>
+            <p>Ingénieur Informatique, Musicien et Web Designer.</p>
             <img id="logo" src="assets/LOGO-light.png" alt="JG" class="w3-image w3-round-xlarge" width="600px"
                 height="auto">
         </header>
@@ -111,14 +114,14 @@
                             <h4 class="w3-center">Web 2/2</h4>
                             <p class="w3-wide">Flutter</p>
                             <div class="w3-theme-l3">
-                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
+                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
                                         class="w3-padding">70%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">PHP</p>
                             <div class="w3-theme-l3">
-                                <div class="w3-theme-d3" style="height:28px;width:80%"><span
-                                        class="w3-padding">70%</span>
+                                <div class="w3-theme-d3" style="height:28px;width:60%"><span
+                                        class="w3-padding">60%</span>
                                 </div>
                             </div>
                         </div>
@@ -149,14 +152,14 @@
                             <h4 class="w3-center">Programmation Fonctionnelle</h4>
                             <p class="w3-wide">Scheme</p>
                             <div class="w3-theme-l3">
-                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
-                                        class="w3-padding">70%</span>
+                                <div class="w3-theme-d3" style="height:28px;width:60%"><span
+                                        class="w3-padding">60%</span>
                                 </div>
                             </div>
                             <p class="w3-wide">Prolog</p>
                             <div class="w3-theme-l3">
-                                <div class="w3-theme-d3" style="height:28px;width:70%"><span
-                                        class="w3-padding">70%</span>
+                                <div class="w3-theme-d3" style="height:28px;width:60%"><span
+                                        class="w3-padding">60%</span>
                                 </div>
                             </div>
                         </div>
@@ -174,39 +177,115 @@
                     </div>
                 </div>
 
-                <div class="w3-col l6 m6 w3-center" style="height: 300px;">
-                    <h4>art</h4>
+                <div class="w3-col l6 m6" style="height: 300px;">
+                    <h4 class="w3-center">art</h4>
 
                     <div class="w3-padding-large" style="margin: 0% 10% 0% 10%;">
                         <button onclick="document.getElementById('modal-left-1').style.display='block'"
-                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align w3-margin-bottom w3-hover-opacity">
+                            class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align w3-margin-bottom w3-hover-opacity w3-center">
                             <span class="left-to-center">Musique</span>
                         </button>
-                        <div id="modal-left-1" class="w3-modal"
-                            onclick="document.getElementById('modal-left-1').style.display='none'">
+                        <div id="modal-left-1" class="w3-modal">
                             <div class="w3-modal-content w3-animate-left">
-                                <header class="w3-container w3-theme">
-                                    <h2>Musique</h2>
+                                <header class="w3-display-container w3-theme">
+                                    <h2 class="w3-margin-left">Musique</h2>
+                                    <button onclick="document.getElementById('modal-left-1').style.display='none'"
+                                        class="w3-button fa fa-times w3-display-topright"></button>
                                 </header>
                                 <div class="w3-container w3-text-theme w3-row w3-row-padding w3-stretch">
-                                    <div class="w3-col l6 m6">
+                                    <div class="w3-col l6 m6 w3-center">
                                         <p>Musiciens depuis mon enfance, j'aime jouer et écouter toute sorte de musique,
                                             du
                                             rock au jazz en passant par l'électro et la pop !
                                         </p>
-                                    </div>
-                                    <div class="w3-col l6 m6">
-                                        <h2>Je joue</h2>
+                                        <h2 class="w3-center">Je joue</h2>
                                         <div class="w3-ul">
                                             <li>guitare</li>
                                             <li>bass</li>
                                             <li>piano</li>
+                                            <li>M.A.O.</li>
                                             <li>chant chorale</li>
                                         </div>
                                     </div>
+                                    <div class="w3-col l6 m6">
+                                        <h3 class="w3-center">Mes Musiques</h3>
+                                        <ul id="overflow" class="w3-light-theme-l3 w3-display-container w3-ul">
+                                            <li class="w3-padding-large">
+                                                <div class="w3-display-container w3-theme">
+                                                    <div class="progressBar w3-theme-d3" style="height: 50px; width:0%">
+                                                        <span class="w3-display-left w3-margin-left">
+                                                            Resonnance
+                                                            <span class="timer">0:00</span> / <span
+                                                                class="duration">0:00</span></span>
+                                                        <button
+                                                            class="w3-display-right w3-button fa fa-play w3-theme w3-hover-opacity"></button><br>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="w3-padding-large">
+                                                <div class="w3-display-container w3-theme">
+                                                    <div class="progressBar w3-theme-d3" style="height: 50px; width:0%">
+                                                        <span class="w3-display-left w3-margin-left">
+                                                            POYO | End of the journey
+                                                            <span class="timer">0:00</span> / <span
+                                                                class="duration">0:00</span></span>
+                                                        <button
+                                                            class="w3-display-right w3-button fa fa-play w3-theme w3-hover-opacity"></button><br>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="w3-padding-large">
+                                                <div class="w3-display-container w3-theme">
+                                                    <div class="progressBar w3-theme-d3" style="height: 50px; width:0%">
+                                                        <span class="w3-display-left w3-margin-left">
+                                                            MAO Project
+                                                            <span class="timer">0:00</span> / <span
+                                                                class="duration">0:00</span></span>
+                                                        <button
+                                                            class="w3-display-right w3-button fa fa-play w3-theme w3-hover-opacity"></button><br>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="w3-padding-large">
+                                                <div class="w3-display-container w3-theme">
+                                                    <div class="progressBar w3-theme-d3" style="height: 50px; width:0%">
+                                                        <span class="w3-display-left w3-margin-left">
+                                                            Holliday mixdown
+                                                            <span class="timer">0:00</span> / <span
+                                                                class="duration">0:00</span></span>
+                                                        <button
+                                                            class="w3-display-right w3-button fa fa-play w3-theme w3-hover-opacity"></button><br>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="w3-padding-large">
+                                                <div class="w3-display-container w3-theme">
+                                                    <div class="progressBar w3-theme-d3" style="height: 50px; width:0%">
+                                                        <span class="w3-display-left w3-margin-left">
+                                                            Before Midnight
+                                                            <span class="timer">0:00</span> / <span
+                                                                class="duration">0:00</span></span>
+                                                        <button
+                                                            class="w3-display-right w3-button fa fa-play w3-theme w3-hover-opacity"></button><br>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+
                                 </div>
-                                <footer class="w3-container w3-theme">
-                                    <br>
+                                <footer class="w3-container w3-theme w3-padding-large w3-center">
+                                    <div class="w3-half">&nbsp;</div>
+
+                                    <div class="w3-third w3-display-container w3-padding">
+                                        <i
+                                            class="fa fa-volume-down w3-display-left w3-margin-left w3-hover-opacity"></i><span
+                                            id="volBar">volume</span><i
+                                            class="fa fa-volume-up w3-display-right w3-margin-right w3-hover-opacity"></i>
+                                    </div>
+                                    <button class="w3-button w3-rest w3-hover-theme" id="reset"><i
+                                            class="w3-hover-opacity fa fa-stop"></i></button>
+
                                 </footer>
                             </div>
                         </div>
@@ -214,16 +293,89 @@
                             class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align w3-margin-bottom w3-hover-opacity">
                             <span class="right-to-center">Game Design</span>
                         </button>
-                        <div id="modal-right-1" class="w3-modal"
-                            onclick="document.getElementById('modal-right-1').style.display='none'">
+                        <div id="modal-right-1" class="w3-modal">
                             <div class="w3-modal-content w3-animate-right">
                                 <header class="w3-container w3-theme">
-                                    <h2>Web Design</h2>
+                                    <h2>Game Design</h2>
+                                    <button onclick="document.getElementById('modal-right-1').style.display='none'"
+                                        class="w3-button fa fa-times w3-display-topright"></button>
                                 </header>
                                 <div class="w3-container w3-text-theme">
-                                    <p>Some text..</p>
-                                    <p>Some text..</p>
+                                    <p>J'apprend encore à faire du jeu-vidéo, mais j'ai déjà quelque réalisation grâce à
+                                        des gameJams et des projets universitaire</p>
+                                    <div class="w3-card w3-padding">
+                                        <h3 class="w3-center">Mes projets</h3>
+
+                                        <div class="w3-row w3-row-padding">
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/swiftness.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+
+                                                <a href="https://github.com/typ49/Swiftness" target="_blank">Swiftness
+                                                    <i class="fa fa-external-link"></i></a>
+                                                <p>Projet Semestriel de Licence informatique, Swiftness est un jeu de
+                                                    plateforme coder en c++ avec gamedev framework. On y incarne un
+                                                    petit personnage qui doit trouver la sortie des niveau en utilisant
+                                                    des "switch" qui change la gravité.</p>
+                                            </div>
+                                        </div>
+                                        <div class="w3-row w3-row-padding">
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+                                                <a href="https://besacraft.fr/" target="_blank">Besacraft <i
+                                                        class="fa fa-external-link"></i></a>
+                                                <p>Besacraft est un projet de construction minecraft visant à
+                                                    reconstruire la ville de Besançon de 1722 avec des mechanique de
+                                                    collaboration et de survie poussant les joueurs à s'entraider et à
+                                                    communiquer ensemble.</p>
+                                                <p>Lors de mon stage de fin de licence, j'ai pu coder en java, le mode
+                                                    permettant la gestion des inventaire et des ressources entre les
+                                                    dimension de besacraft.</p>
+                                            </div>
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/besacraft.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+                                        </div>
+                                        <div class="w3-row w3-row-padding">
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/bubble_survivor.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+
+                                                <a href="https://vitalfocheux.github.io/BubbleSurvivors/"
+                                                    target="_blank">Bubble Survivor <i
+                                                        class="fa fa-external-link"></i></a>
+                                                <p>Jeu créée en un week-end par Vital Faucheux lors de la Global Game
+                                                    Jam 2025 sur le thème des bulles. On joue une bulle qui tire sur les
+                                                    poissons qui veulent la faire éclater. Sur ce projet, j'ai fait les
+                                                    musiques et j'ai adapter les sprite des enemis.</p>
+                                            </div>
+                                        </div>
+                                        <div class="w3-row w3-row-padding">
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+                                                <a href="https://github.com/typ49/wordle-like"
+                                                    target="_blank">Wordle-Fight <i class="fa fa-external-link"></i></a>
+                                                <p>Projet de Master 1</p>
+                                                <p>Dans ce jeu reprenant les méchanique du wordle, vous devrez tenter de
+                                                    deviner un maximum de mots en un minimum d'essaie</p>
+                                            </div>
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/wordle-fight.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br>
                                 <footer class="w3-container w3-theme">
                                     <br>
                                 </footer>
@@ -233,16 +385,52 @@
                             class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-left-align w3-margin-bottom w3-hover-opacity">
                             <span class="left-to-center">Web Design</span>
                         </button>
-                        <div id="modal-left-2" class="w3-modal"
-                            onclick="document.getElementById('modal-left-2').style.display='none'">
+                        <div id="modal-left-2" class="w3-modal">
                             <div class="w3-modal-content w3-animate-left">
                                 <header class="w3-container w3-theme">
-                                    <h2>Game Design</h2>
+                                    <h2>Web Design</h2>
+                                    <button onclick="document.getElementById('modal-left-2').style.display='none'"
+                                        class="w3-button fa fa-times w3-display-topright"></button>
                                 </header>
                                 <div class="w3-container w3-text-theme">
-                                    <p>Some text..</p>
-                                    <p>Some text..</p>
+                                    <p>Je préfère concevoire des site web en utilisant html/css et javascript pour la
+                                        communauté active d'artiste css/js. De plus, j'utilise <a
+                                            href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css <i
+                                                class="fa fa-external-link"></i></a> dans mes sites pour simplifier la
+                                        mise en page et la lecture du code.</p>
+                                    <div id="web"></div>
+                                    <div class="w3-card w3-padding">
+                                        <h3 class="w3-center">Mes réalisations</h3>
+
+                                        <div class="w3-row w3-row-padding">
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/web_chorale.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+
+                                                <a href="https://www.choraleu-besancon.fr" target="_blank">Site web
+                                                    de
+                                                    la chorale universitaire <i class="fa fa-external-link"></i></a>
+                                                <p>(html/css/js/w3.css)</p>
+                                            </div>
+                                        </div>
+                                        <div class="w3-row w3-row-padding">
+                                            <div id="web1" class="w3-col l6 m6 w3-container w3-center w3-animate-zoom"
+                                                style="height:168.75px; align-content: center;">
+                                                <a href="#">Mon site web (sur lequel vous lisez ceci)</a>
+                                                <p>(html/css/js/w3.css)</p>
+                                            </div>
+                                            <div class="w3-col l6 m6 w3-center">
+                                                <img class="w3-image" src="assets/project_photo/web_portfolio.png"
+                                                    style="width: 300px; height:168.75">
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <br>
                                 <footer class="w3-container w3-theme">
                                     <br>
                                 </footer>
@@ -252,15 +440,30 @@
                             class="w3-button w3-theme-d3 w3-round-xxlarge w3-large w3-wide w3-block w3-right-align w3-margin-bottom w3-hover-opacity">
                             <span class="right-to-center">Parolier</span>
                         </button>
-                        <div id="modal-right-2" class="w3-modal"
-                            onclick="document.getElementById('modal-right-2').style.display='none'">
+                        <div id="modal-right-2" class="w3-modal">
                             <div class="w3-modal-content w3-animate-right">
                                 <header class="w3-container w3-theme">
                                     <h2>Parolier</h2>
+                                    <button onclick="document.getElementById('modal-right-2').style.display='none'"
+                                        class="w3-button fa fa-times w3-display-topright"></button>
                                 </header>
                                 <div class="w3-container w3-text-theme">
-                                    <p>Some text..</p>
-                                    <p>Some text..</p>
+                                    <p>J'écris en amateur des textes qui me viennent du cœur.</p>
+                                    <p>J'ai aussi participé à 4 <a
+                                            href="https://www.choraleu-besancon.fr/tremplin_ecriture.html"
+                                            target="_blank">tremplin d'écriture organisé par la chorale
+                                            universitaire de
+                                            Besançon <i class="fa fa-external-link"></i></a></p>
+                                    <h3>Quelques uns de mes textes :</h3>
+                                    <div id="lyrics"></div>
+                                    <br>
+
+
+
+
+
+
+
                                 </div>
                                 <footer class="w3-container w3-theme">
                                     <br>
@@ -294,15 +497,18 @@
         <div class="w3-padding-64 w3-content" id="favorits">
             <h2>Mes Passions</h2>
             <hr style="width:300px" class="w3-opacity">
-            <div id="favorits-section" class="w3-row w3-row-padding w3-center w3-padding-large w3-section w3-theme-l3 w3-stretch">
+            <div id="favorits-section"
+                class="w3-row w3-row-padding w3-center w3-padding-large w3-section w3-theme-l3 w3-stretch">
                 <div class="w3-col l4 m4">
                     <button onclick="accordionFunction('p1')" class="w3-button w3-section w3-hover-opacity">
                         <span class="w3-xlarge">Jeu-vidéos <i class="fa fa-caret-down"></i></span>
                     </button>
                     <div id="p1" class="w3-hide w3-theme">
                         <p>J'aime particulièrement les jeu narratif et les souls-like.</p>
-                        <p>Parmis mes jeux préférer, on peut retrouver <b>Life is Strange</b>, <b>Sekiro</b>, <b>Hollow
-                                Knight</b> ou encore <b>Outer Wilds</b></p>
+                        <p>Parmis mes jeux préférer, on peut retrouver <b>Life is Strange</b>, <b>Sekiro</b>,
+                            <b>Hollow
+                                Knight</b> ou encore <b>Outer Wilds</b>
+                        </p>
                         <p>Découvre mes univers préférer :</p>
                         <a href="https://backloggd.com/u/typ49/" target="_blank">
                             <button class="w3-button w3-theme-l3 w3-padding-large w3-section w3-center">
@@ -337,7 +543,7 @@
                     <div id="p3" class="w3-hide w3-theme">
                         <p>Quand je vois des amis, je propose toujours de regarder un film</p>
                         <p>c'est sans aucun dout mon plus grand <br> passe-temps</p>
-                        
+
                         <a href="#" target="_blank">
                             <button class=" w3-button w3-theme-l3 w3-padding-large w3-section" style="width: 80%;">
                                 <span class="w3-display-container">Letterboxd &emsp;&nbsp;<img
@@ -410,20 +616,6 @@
                 <a class="w3-hover-opacity" href="mailto:juliengauthier410@gmail.com">juliengauthier410@gmail.com</a>
             </p>
         </div><br>
-
-        <!-- <p>Restons en contacte. Envoyez-moi un message:</p>
-
-            <form action="/action_page.php" target="_blank">
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Nom" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Sujet" required name="Subject"></p>
-                <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-                <p>
-                    <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-                        <i class="fa fa-paper-plane"></i> Envoie
-                    </button>
-                </p>
-            </form> -->
         <!-- End Contact Section -->
     </div>
     </div>
